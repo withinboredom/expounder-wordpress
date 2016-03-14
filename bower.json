@@ -1,6 +1,9 @@
 {
-    "name": "expounder.js",
-    "main": "expounder.js",
+    "name": "expounder",
+    "main": [
+        "expounder.js",
+        "expounder.css"
+    ],
     "license": "MIT",
     "ignore": [
         ".*",
