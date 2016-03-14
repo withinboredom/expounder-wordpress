@@ -1,0 +1,10 @@
+{
+    "name": "expounder.js",
+    "main": "expounder.js",
+    "license": "MIT",
+    "ignore": [
+        ".*",
+        "examples",
+        "*.json"
+    ]
+}
