@@ -22,10 +22,8 @@ Expounder.js can be added to your site in two simple steps:
    version, for production) in your page. Alternatively, just add these two
    lines to your HTML:
 
-<code><pre>&lt;script
-src="https://gitcdn.xyz/repo/skorokithakis/expounder/master/expounder.js">&lt;/script>
-&lt;link rel="stylesheet"
-href="https://gitcdn.xyz/repo/skorokithakis/expounder/master/expounder.css" /></pre></code>
+<code><pre>&lt;script src="https://gitcdn.xyz/repo/skorokithakis/expounder/master/expounder.js">&lt;/script>
+&lt;link rel="stylesheet" href="https://gitcdn.xyz/repo/skorokithakis/expounder/master/expounder.css" /></pre></code>
 
    </li>
    <li>
