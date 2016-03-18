@@ -18,7 +18,7 @@ posts](https://www.stavros.io/posts/building-cheap-home-sensorcontroller/).
 Expounder.js can be added to your site in two simple steps:
 
 <ol>
-<li>Download and include `expounder.js` and `expounder.css` (or the minified
+<li>Download and include <code>expounder.js</code> and <code>expounder.css</code> (or the minified
    version, for production) in your page. Alternatively, just add these two
    lines to your HTML:
    
