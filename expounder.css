@@ -1,6 +1,5 @@
-span[data-expounder] {
-    text-decoration: none;
-    border-bottom: 1px dashed;
+*[data-expounder] {
+    text-decoration: underline;
     cursor: pointer;
 }
 
