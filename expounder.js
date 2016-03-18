@@ -1,54 +1,54 @@
 ;(function (global) {
 
-  'use strict';
+	'use strict';
 
-  var Expounder;
+	var Expounder;
 
-  function expounderFactory() {
+	function expounderFactory() {
 
-    document.addEventListener('DOMContentLoaded', function() {
+		document.addEventListener('DOMContentLoaded', function() {
 
-      var elements = document.querySelectorAll('span[data-expounder]');
+			var elements = document.querySelectorAll('span[data-expounder]');
 
-      for(var index = 0; index < elements.length; index++) {
+			for(var index = 0; index < elements.length; index++) {
 
-        elements[index].addEventListener('click', function(event) {
+				elements[index].addEventListener('click', function(event) {
 
-          event.preventDefault();
+					event.preventDefault();
 
-          var expoundId = this.dataset.expounder;
-          var expounded = document.querySelector('*[data-expounded="' + expoundId + '"]');
+					var expoundId = this.dataset.expounder;
+					var expounded = document.querySelector('*[data-expounded="' + expoundId + '"]');
 
-          var parentNode = this.parentNode;
-          var textNode = document.createTextNode(this.textContent);
+					var parentNode = this.parentNode;
+					var textNode = document.createTextNode(this.textContent);
 
-          parentNode.replaceChild(textNode, this);
+					parentNode.replaceChild(textNode, this);
 
-          expounded.className = "expounded-appear";
+					expounded.className = "expounded-appear";
 
-        }, false);
-      }
-    }, false);
-  }
+				}, false);
+			}
+		}, false);
+	}
 
-  // Export
-  Expounder = expounderFactory();
+	// Export
+	Expounder = expounderFactory();
 
-  // AMD
-  if (typeof define === 'function' && define.amd) {
+	// AMD
+	if (typeof define === 'function' && define.amd) {
 
-    define(function () {
-      return Expounder;
-    });
+		define(function () {
+			return Expounder;
+		});
 
-  // Node and other CommonJS-like environments that support module.exports
-  } else if (typeof module !== 'undefined' && module.exports) {
+		// Node and other CommonJS-like environments that support module.exports
+	} else if (typeof module !== 'undefined' && module.exports) {
 
-    module.exports = Expounder;
+		module.exports = Expounder;
 
-  // Browser
-  } else {
-    global.Expounder = Expounder;
-  }
+		// Browser
+	} else {
+		global.Expounder = Expounder;
+	}
 
 })(this);
