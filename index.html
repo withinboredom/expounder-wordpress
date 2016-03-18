@@ -2,7 +2,74 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
+    <link href='https://fonts.googleapis.com/css?family=Playfair+Display' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Ovo|Muli:300' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="https://gitcdn.xyz/repo/skorokithakis/expounder/master/expounder.css" />
+    <style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    body {
+        padding: 50px;
+        background-color: #292929;
+        color: rgb(212, 212, 212);
+    }
+    a { 
+        color: rgb(212, 212, 212);        
+    }
+    h1, h2 {
+        font-family: 'Playfair Display', serif;
+        font-weight: bold;        
+        color: #fff;
+        margin-bottom: 20px;
+    }
+    h1 {
+        font-size: 70px;
+    }
+    h2 {
+        font-size: 50px;
+    }
+    iframe {
+        max-width: 1000px;
+    }
+    p {
+        max-width: 800px;        
+        font-size: 25px;
+        line-height: 1.3em;
+        font-family: 'Muli', sans-serif;
+        margin-bottom: 15px;
+    }
+    code {
+        background: rgb(212, 212, 212);
+        color: #292929;
+        display: block;
+        padding: 20px;
+    }
+    pre {
+        font-family: Menlo,Monaco,Consolas,"Courier New",monospace;
+    }
+
+    @media (max-width: 550px) {
+        body {
+            padding: 20px;
+        }
+        h1 {
+            font-size: 40px;
+        }
+        h2 {
+            font-size: 20px;
+        }
+        p {
+            font-size: 18px;
+        }
+        iframe,
+        p {
+            max-width: 100%;
+        }
+    }
+    </style>
     <title>Expounder</title>
 </head>
 <body>
@@ -41,39 +108,14 @@
     </p>
 
     <div class="expounder-example">
-        Quantum mechanics (QM; also known as quantum physics or quantum theory)
-        including <span data-expounder="qft">quantum field theory</span><span
-            data-expounded="qft"> (a theoretical framework for constructing
-            quantum mechanical models of subatomic particles in particle physics
-            and quasiparticles in condensed matter physics)</span>, is
-        a fundamental branch of physics concerned with processes involving, for
-        example, <span data-expounder="atom">atoms</span> and <span
-            data-expounder="photon">photons</span>.  <span
-            data-expounded="atom">An atom is the smallest constituent unit of
-            ordinary matter that has the properties of a chemical element.[1]
-            Every solid, liquid, gas, and plasma is composed of neutral or
-            ionized atoms.</span> <span data-expounded="photon">A photon is an
-            elementary particle, the quantum of all forms of electromagnetic
-            radiation, including light. It is the force carrier for the
-            electromagnetic force, even when static via virtual photons.</span>
-        In such processes, said to be quantized, the action has been observed to
-        be only in integer multiples of the <span data-expounder="planck">Planck
-            constant</span><span data-expounded="planck">, a physical quantity
-            that is exceedingly, indeed perhaps ultimately, small</span>. This
-        is utterly
-        inexplicable in <span data-expounder="classical">classical
-            physics</span><span data-expounded="classical">, which refers to
-            theories of physics that predate modern, more complete, or more
-            widely applicable theories</span>.
+        <p>Quantum mechanics (QM; also known as quantum physics or quantum theory) including <span data-expounder="qft">quantum field theory</span><span data-expounded="qft"> (a theoretical framework for constructing quantum mechanical models of subatomic particles in particle physics and quasiparticles in condensed matter physics)</span>, is a fundamental branch of physics concerned with processes involving, for example, <span data-expounder="atom">atoms</span> and <span data-expounder="photon">photons</span>.  <span data-expounded="atom">An atom is the smallest constituent unit of ordinary matter that has the properties of a chemical element.[1] Every solid, liquid, gas, and plasma is composed of neutral or ionized atoms.</span> <span data-expounded="photon">A photon is an elementary particle, the quantum of all forms of electromagnetic radiation, including light. It is the force carrier for the electromagnetic force, even when static via virtual photons.</span> In such processes, said to be quantized, the action has been observed to be only in integer multiples of the <span data-expounder="planck">Planck constant</span><span data-expounded="planck">, a physical quantity that is exceedingly, indeed perhaps ultimately, small</span>. This is utterly inexplicable in <span data-expounder="classical">classical physics</span><span data-expounded="classical">, which refers to theories of physics that predate modern, more complete, or more widely applicable theories</span>.</p>
     </div>
 
     <h2>Usage</h2>
 
-    Clone <a href="https://github.com/skorokithakis/expounder">the repo</a> and
-    add the files to your project, or just add these two lines to your HTML:
+    <p>Clone <a href="https://github.com/skorokithakis/expounder">the repo</a> and add the files to your project, or just add these two lines to your HTML:</p>
 
-<code><pre>&lt;script src="https://gitcdn.xyz/repo/skorokithakis/expounder/master/expounder.js">&lt;/script>
-&lt;link rel="stylesheet" href="https://gitcdn.xyz/repo/skorokithakis/expounder/master/expounder.css" /></pre></code>
+    <script>(function(d, s, id) {var js, pastejs = d.getElementsByTagName(s)[0];if (d.getElementById(id)) return;js = d.createElement(s); js.id = id;js.src ='https://www.pastery.net/static/js/embed.js';pastejs.parentNode.insertBefore(js, pastejs);}(document, 'script', 'pastery-jssdk'));</script><div class='paste-list' data-pasteid='twkxxx'></div>
 
     <script src="https://gitcdn.xyz/repo/skorokithakis/expounder/master/expounder.js"></script>
 </body>
