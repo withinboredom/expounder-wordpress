@@ -17,10 +17,20 @@ posts](https://www.stavros.io/posts/building-cheap-home-sensorcontroller/).
 
 Expounder.js can be added to your site in two simple steps:
 
-1. Include `expounder.js` and `expounder.css` (or the minified version for
-   production) in your page.
-2. Add `data-expounder` with an arbitrary ID for `span` elements that will act
-   as hooks that expand areas and `data-expounded` for the areas to be expanded.
+<ol>
+<li>Download and include `expounder.js` and `expounder.css` (or the minified
+   version, for production) in your page. Alternatively, just add these two
+   lines to your HTML:
+   
+<pre>&lt;link rel="stylesheet" href="https://rawgit.com/skorokithakis/expounder/master/expounder.css" />
+&lt;script src="https://rawgit.com/skorokithakis/expounder/master/expounder.js">&lt;/script></pre>
+
+   </li>
+   <li>
+   Add <code>data-expounder</code>with arbitrary IDs for <code>span</code> elements that will act
+   as hooks that expand areas, and <code>data-expounded</code> for the areas to be expanded.
+   </li>
+</ol>
 
 For example:
 
