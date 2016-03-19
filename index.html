@@ -19,6 +19,9 @@
     a {
         color: rgb(212, 212, 212);
     }
+    a:hover {
+        color: #fff;
+    }
     h1, h2 {
         font-family: 'Playfair Display', serif;
         font-weight: bold;
@@ -31,8 +34,11 @@
     h2 {
         font-size: 45px;
     }
-    iframe {
-        max-width: 1000px;
+    .expounder-example img {
+        border: 5px solid rgb(212, 212, 212);
+    }
+    .expounder-example a:hover img {
+        border-color: #fff;
     }
     p {
         max-width: 800px;
@@ -41,16 +47,13 @@
         font-family: 'Muli', sans-serif;
         margin-bottom: 15px;
     }
-    code {
-        background: rgb(212, 212, 212);
-        color: #292929;
-        display: block;
-        padding: 20px;
+    .copy {
+        font-size: 15px;
+        color: #999;
     }
-    pre {
-        font-family: Menlo,Monaco,Consolas,"Courier New",monospace;
+    .paste-list {
+        margin-bottom: 20px;
     }
-
     @media (max-width: 550px) {
         body {
             padding: 20px;
@@ -63,10 +66,10 @@
         }
         p {
             font-size: 18px;
-        }
-        iframe,
-        p {
             max-width: 100%;
+        }
+        .copy {
+            font-size: 10px;
         }
     }
     </style>
@@ -155,6 +158,8 @@
 
     <p>And you're done! You aren't limited to spans, you can set any element you
     want as either the expounder or expounded element.</p>
+
+    <p class="copy">Made with ♥️ from Greece.</p>
 
     <script src="https://gitcdn.xyz/repo/skorokithakis/expounder/master/expounder.js"></script>
 </body>
