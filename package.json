@@ -1,31 +1,33 @@
 {
   "name": "expounder",
-  "description": "A small, fast library for expandable elements.",
   "version": "0.0.1",
-  "keywords": [
-    "expand"
-  ],
+  "description": "A small, fast library for expandable elements.",
+  "main": "expounder.js",
+  "scripts": {
+    "build": "uglifyjs -o ./expounder.min.js ./expounder.js"
+  },
   "repository" : {
     "type": "git",
     "url": "https://github.com/skorokithakis/expounder.git"
   },
-  "main": "./expounder",
+  "keywords": [
+    "expand"
+  ],
   "author": {
     "name": "Stavros Korokithakis",
     "email": "hi@stavros.io"
   },
-   "bugs": {
+  "license": "MIT",
+  "bugs": {
     "url": "https://github.com/skorokithakis/expounder/issues"
   },
-  "engines": {
-    "node": "*"
-  },
-  "license": "MIT",
-  "scripts": {
-    "build": "uglifyjs -o ./expounder.min.js ./expounder.js"
+  "homepage": "https://skorokithakis.github.io/expounder",
+  "devDependencies": {
+    "uglify-js": "*"
   },
   "files": [
     "expounder.js",
-    "expounder.min.js"
+    "expounder.min.js",
+    "expounder.css"
   ]
 }
