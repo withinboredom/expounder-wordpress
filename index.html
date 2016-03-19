@@ -16,10 +16,13 @@
         background-color: #292929;
         color: rgb(212, 212, 212);
     }
-    a {
+    a,
+     *[data-expounder] {
+        transition: color .25s ease-in;
         color: rgb(212, 212, 212);
     }
-    a:hover {
+    a:hover,
+    *[data-expounder]:hover {
         color: #fff;
     }
     h1, h2 {
@@ -35,7 +38,9 @@
         font-size: 45px;
     }
     .expounder-example img {
+        transition: border-color .25s ease-in;
         border: 5px solid rgb(212, 212, 212);
+        margin-bottom: 20px;
     }
     .expounder-example a:hover img {
         border-color: #fff;
