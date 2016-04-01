@@ -48,6 +48,7 @@ with the fires coming out of it.</div>
 
 This library is released under the MIT license (see the LICENSE file).
 
+* 4/1/2016 Added contract option with data-expounder-c attribute
 * 3/13/2016 Initial release
 
 

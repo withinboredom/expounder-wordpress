@@ -8,7 +8,12 @@
 
 		document.addEventListener('DOMContentLoaded', function() {
 
-			var elements = document.querySelectorAll('span[data-expounder]');
+			var elements = document.querySelectorAll('*[data-expounder],*[data-expounder-c]');
+			var animationEndListener = function(event) {
+
+				if(event.target.className == 'expounded-disappear')
+					event.target.className = '';
+			};
 
 			for(var index = 0; index < elements.length; index++) {
 
@@ -16,15 +21,33 @@
 
 					event.preventDefault();
 
-					var expoundId = this.dataset.expounder;
+					var shouldContract = (typeof this.dataset.expounderC != 'undefined');
+
+					var expoundId = this.dataset.expounder || this.dataset.expounderC;
 					var expounded = document.querySelector('*[data-expounded="' + expoundId + '"]');
 
-					var parentNode = this.parentNode;
-					var textNode = document.createTextNode(this.textContent);
+					if(shouldContract) {
 
-					parentNode.replaceChild(textNode, this);
+						if(expounded.className == 'expounded-appear') {
 
-					expounded.className = "expounded-appear";
+							expounded.addEventListener('animationend', animationEndListener);
+							expounded.className = 'expounded-disappear';
+
+						} else {
+
+							expounded.removeEventListener('animationend', animationEndListener);
+							expounded.className = 'expounded-appear';
+						}
+
+					} else {
+
+						var parentNode = this.parentNode;
+						var textNode = document.createTextNode(this.textContent);
+
+						parentNode.replaceChild(textNode, this);
+
+						expounded.className = 'expounded-appear';
+					}
 
 				}, false);
 			}
