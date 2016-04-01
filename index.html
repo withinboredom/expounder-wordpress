@@ -42,6 +42,11 @@
         font-size: 20px;
         margin-bottom: 5px;
     }
+    ul.examples {
+        border-bottom: 1px dashed rgba(255, 255, 255, .25);
+        max-width: 800px;
+        margin-bottom: 15px;
+    }
     .expounder-example img {
         transition: border-color .25s ease-in;
         border: 5px solid rgb(212, 212, 212);
@@ -79,6 +84,9 @@
         }
         p {
             font-size: 16px;
+            max-width: 100%;
+        }
+        ul.examples {
             max-width: 100%;
         }
         .copy {
@@ -208,13 +216,13 @@
 
     <h2>Real-world examples</h2>
 
-    <ul>
+    <ul class="examples">
         <li>
-        <a
-            href="https://www.stavros.io/posts/building-cheap-home-sensorcontroller/">Building
-            a cheap home sensor/controller</a>.  This was the first post I wrote
+            <h3><a href="https://www.stavros.io/posts/building-cheap-home-sensorcontroller/">Building
+            a cheap home sensor/controller</a></h3>
+            <p>This was the first post I wrote
             that used Expounder, and I think it's a good example (try farther down,
-            the first few usages are just an introduction).
+            the first few usages are just an introduction).</p>
         </li>
     </ul>
 
