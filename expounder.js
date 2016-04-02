@@ -24,7 +24,7 @@
 					var shouldContract = (typeof this.dataset.expounderC != 'undefined');
 
 					var expoundId = this.dataset.expounder || this.dataset.expounderC;
-					for (let expounded of document.querySelectorAll('*[data-expounded="' + expoundId + '"]')) {
+					for (var expounded in document.querySelectorAll('*[data-expounded="' + expoundId + '"]')) {
 						if(shouldContract) {
 							if(expounded.className == 'expounded-appear') {
 								expounded.addEventListener('animationend', animationEndListener);
