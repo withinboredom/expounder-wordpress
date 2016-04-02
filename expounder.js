@@ -24,29 +24,25 @@
 					var shouldContract = (typeof this.dataset.expounderC != 'undefined');
 
 					var expoundId = this.dataset.expounder || this.dataset.expounderC;
-					var expounded = document.querySelector('*[data-expounded="' + expoundId + '"]');
-
-					if(shouldContract) {
-
-						if(expounded.className == 'expounded-appear') {
-
-							expounded.addEventListener('animationend', animationEndListener);
-							expounded.className = 'expounded-disappear';
-
+					for (let expounded of document.querySelectorAll('*[data-expounded="' + expoundId + '"]')) {
+						if(shouldContract) {
+							if(expounded.className == 'expounded-appear') {
+								expounded.addEventListener('animationend', animationEndListener);
+								expounded.className = 'expounded-disappear';
+							} else {
+								expounded.removeEventListener('animationend', animationEndListener);
+								expounded.className = 'expounded-appear';
+							}
 						} else {
-
-							expounded.removeEventListener('animationend', animationEndListener);
 							expounded.className = 'expounded-appear';
 						}
+					}
 
-					} else {
-
+					if (!shouldContract) {
 						var parentNode = this.parentNode;
 						var textNode = document.createTextNode(this.textContent);
 
 						parentNode.replaceChild(textNode, this);
-
-						expounded.className = 'expounded-appear';
 					}
 
 				}, false);
