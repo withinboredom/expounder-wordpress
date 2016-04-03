@@ -13,7 +13,7 @@
 
 		this.getExpoundedItems = function(id) {
 			if (typeof id === 'undefined') {
-				throw new Error("Missing exponder id");
+				throw new Error("Missing Expounder id");
 			}
 			return document.querySelectorAll('[data-expounded="' + id + '"]');
 		};
