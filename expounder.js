@@ -57,7 +57,7 @@
 
 							if (expounded.className == appearClass) {
 								expounded.addEventListener('animationend', expounder.animationEndListener);
-								expounded.className = 'expounded-disappear';
+								expounded.className = disappearClass;
 							} else {
 								expounded.removeEventListener('animationend', expounder.animationEndListener);
 								expounded.className = appearClass;
