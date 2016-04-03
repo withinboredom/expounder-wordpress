@@ -2,74 +2,109 @@
 
 	'use strict';
 
-	var Expounder;
+	function Expounder() {
 
-	function expounderFactory() {
+		var appearClass = 'expounded-appear',
+			disappearClass = 'expounded-disappear';
 
-		document.addEventListener('DOMContentLoaded', function() {
+		this.getElements = function() {
+			return document.querySelectorAll('[data-expounder], [data-expounder-c]');
+		};
 
-			var elements = document.querySelectorAll('*[data-expounder],*[data-expounder-c]');
-			var animationEndListener = function(event) {
+		this.getExpoundedItems = function(id) {
+			if (typeof id === 'undefined') {
+				throw new Error("Missing exponder id");
+			}
+			return document.querySelectorAll('[data-expounded="' + id + '"]');
+		};
 
-				if(event.target.className == 'expounded-disappear')
-					event.target.className = '';
-			};
+		this.animationEndListener = function(event) {
+
+			if (event.target.className == disappearClass) {
+				event.target.className = '';
+			}
+
+		};
+
+		this.apply = function() {
+
+			var expounder = this,
+				elements = this.getElements();
 
 			for(var index = 0; index < elements.length; index++) {
+
+				var element = elements[index];
+
+				if ((typeof element.dataset.expounderLoaded != 'undefined')) {
+					continue;
+				} else {
+					element.dataset.expounderLoaded = true;
+				}
 
 				elements[index].addEventListener('click', function(event) {
 
 					event.preventDefault();
 
-					var shouldContract = (typeof this.dataset.expounderC != 'undefined');
+					var shouldContract = (typeof this.dataset.expounderC != 'undefined'),
+						expoundId = this.dataset.expounder || this.dataset.expounderC,
+						expoundedItems = expounder.getExpoundedItems(expoundId);
 
-					var expoundId = this.dataset.expounder || this.dataset.expounderC;
-					var expoundedItems = document.querySelectorAll('*[data-expounded="' + expoundId + '"]');
 					for (var i = 0; i < expoundedItems.length; ++i) {
+
 						var expounded = expoundedItems[i];
-						if(shouldContract) {
-							if(expounded.className == 'expounded-appear') {
-								expounded.addEventListener('animationend', animationEndListener);
-								expounded.className = 'expounded-disappear';
+
+						if (shouldContract) {
+
+							if (expounded.className == appearClass) {
+								expounded.addEventListener('animationend', expounder.animationEndListener);
+								expounded.className = disappearClass;
 							} else {
-								expounded.removeEventListener('animationend', animationEndListener);
-								expounded.className = 'expounded-appear';
+								expounded.removeEventListener('animationend', expounder.animationEndListener);
+								expounded.className = appearClass;
 							}
+
 						} else {
-							expounded.className = 'expounded-appear';
+
+							expounded.className = appearClass;
+
 						}
 					}
 
 					if (!shouldContract) {
 						var parentNode = this.parentNode;
 						var textNode = document.createTextNode(this.textContent);
-
 						parentNode.replaceChild(textNode, this);
 					}
 
 				}, false);
 			}
-		}, false);
+
+		};
 	}
 
 	// Export
-	Expounder = expounderFactory();
+	var expounder = new Expounder();
+
+	// automatically apply it on load
+	document.addEventListener('DOMContentLoaded', function() {
+		expounder.apply();
+	});
 
 	// AMD
 	if (typeof define === 'function' && define.amd) {
 
 		define(function () {
-			return Expounder;
+			return expounder;
 		});
 
 		// Node and other CommonJS-like environments that support module.exports
 	} else if (typeof module !== 'undefined' && module.exports) {
 
-		module.exports = Expounder;
+		module.exports = expounder;
 
 		// Browser
 	} else {
-		global.Expounder = Expounder;
+		global.Expounder = expounder;
 	}
 
 })(this);

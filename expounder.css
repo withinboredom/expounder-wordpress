@@ -1,5 +1,5 @@
-*[data-expounder],
-*[data-expounder-c] {
+[data-expounder],
+[data-expounder-c] {
 	text-decoration: none;
 	border-bottom: 1px dashed;
 	cursor: pointer;
@@ -14,14 +14,14 @@
 	to { opacity: 0; }
 }
 
-*[data-expounded] {
+[data-expounded] {
 	display: none;
 }
-*[data-expounded].expounded-appear {
+[data-expounded].expounded-appear {
 	display: initial;
 	animation: expoundedFadeIn 1s;
 }
-*[data-expounded].expounded-disappear {
+[data-expounded].expounded-disappear {
 	display: initial;
 	animation: expoundedFadeOut 1s;
 }
