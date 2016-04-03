@@ -48,9 +48,6 @@ with the fires coming out of it.</div>
 
 This library is released under the MIT license (see the LICENSE file).
 
-* 4/1/2016 Added contract option with data-expounder-c attribute
-* 3/13/2016 Initial release
-
 
 ## Thanks
 
@@ -62,4 +59,6 @@ Thanks go to:
 
 ## Changelog
 
-* 0.0.1 -- Initial release.
+* 0.0.3 -- 4/3/2016 Updated the API, added the ability to expand every element with the same data-expounded id from a single expounder link.
+* 0.0.2 -- 4/1/2016 Added contract option with data-expounder-c attribute.
+* 0.0.1 -- 3/13/2016 Initial release.
