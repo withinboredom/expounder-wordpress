@@ -9,7 +9,8 @@ few sentences, paragraph or any other element that explains the concept.
 
 This way, people familiar with a term don't need to spend a paragraph reading
 about it or waste time (and potentially miss other useful information) skimming
-ahead. You can see an example in the `examples` directory or on [one of my
+ahead. You can see an example in the `examples` directory, on the [Expounder
+page](https://skorokithakis.github.io/expounder/) or on [one of my
 posts](https://www.stavros.io/posts/building-cheap-home-sensorcontroller/).
 
 
