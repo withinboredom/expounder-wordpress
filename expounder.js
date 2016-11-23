@@ -15,7 +15,7 @@
 									? (scriptName.getAttribute('data-default-collapse') == "true")
 									: false
 			};
-		}
+		};
 
 		this.getElements = function() {
 			return document.querySelectorAll('[data-expounder], [data-expounder-c]');
