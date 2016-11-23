@@ -7,6 +7,16 @@
 		var appearClass = 'expounded-appear',
 			disappearClass = 'expounded-disappear';
 
+		this.getScriptParams = function() {
+			var scripts = document.getElementsByTagName('script');
+			var scriptName = scripts[scripts.length - 1]; // always the current script
+			return {
+				defaultCollapse : scriptName.hasAttribute('data-default-collapse')
+									? (scriptName.getAttribute('data-default-collapse') == "true")
+									: false
+			};
+		};
+
 		this.getElements = function() {
 			return document.querySelectorAll('[data-expounder], [data-expounder-c]');
 		};
@@ -31,7 +41,7 @@
 			var expounder = this,
 				elements = this.getElements();
 
-			for(var index = 0; index < elements.length; index++) {
+			for (var index = 0; index < elements.length; index++) {
 
 				var element = elements[index];
 
@@ -45,7 +55,8 @@
 
 					event.preventDefault();
 
-					var shouldContract = (typeof this.dataset.expounderC != 'undefined'),
+					var defaultCollapse = expounder.getScriptParams().defaultCollapse,
+						shouldContract = defaultCollapse || (typeof this.dataset.expounderC != 'undefined'),
 						expoundId = this.dataset.expounder || this.dataset.expounderC,
 						expoundedItems = expounder.getExpoundedItems(expoundId);
 
