@@ -13,6 +13,10 @@ ahead. You can see an example in the `examples` directory, on the [Expounder
 page](https://skorokithakis.github.io/expounder/) or on [one of my
 posts](https://www.stavros.io/posts/building-cheap-home-sensorcontroller/).
 
+Here's a demo GIF, from the Expounder page:
+
+![](misc/animation.gif)
+
 
 ## Usage
 
