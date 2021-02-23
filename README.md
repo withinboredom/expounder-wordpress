@@ -46,6 +46,10 @@ all others.
 with the fires coming out of it.</div>
 ````
 
+If you want the links to be collapsible again after they've been clicked, you can
+include the script with `data-default-collapse="true"` in the `script` tag (see
+the `examples/` dir for usage), though this is discouraged for usability.
+
 
 ## License
 
