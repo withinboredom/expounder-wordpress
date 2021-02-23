@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name: Expounder
- * Plugin URI: https://github.com/withinboredom/expounder-wordpress
+ * Plugin URI: https://github.com/withinboredom/expounder-wordpress/tree/master/plugin
  * Description: Allows authors of tutorials to hide their explanations if they expect readers to be familiar with a concept.
  * Version: 0.5.0
  * Requires at least: 5.6.2
