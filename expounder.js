@@ -55,6 +55,10 @@
 
 					event.preventDefault();
 
+					// Only allow left and middle mouse clicks
+					if (event.button != 0 && event.button != 1)
+						return;
+
 					var defaultCollapse = expounder.getScriptParams().defaultCollapse,
 						shouldContract = defaultCollapse || (typeof this.dataset.expounderC != 'undefined'),
 						expoundId = this.dataset.expounder || this.dataset.expounderC,
