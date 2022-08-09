@@ -51,7 +51,7 @@
 					element.dataset.expounderLoaded = true;
 				}
 
-				elements[index].addEventListener('click', function(event) {
+				elements[index].addEventListener('mousedown', function(event) {
 
 					event.preventDefault();
 
