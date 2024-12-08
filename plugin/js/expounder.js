@@ -76,9 +76,13 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 					element.dataset.expounderLoaded = true;
 				}
 
-				elements[index].addEventListener('click', function(event) {
+				elements[index].addEventListener('mousedown', function(event) {
 
 					event.preventDefault();
+
+					// Only allow left and middle mouse clicks
+					if (event.button != 0 && event.button != 1)
+						return;
 
 					var defaultCollapse = expounder.getScriptParams().defaultCollapse,
 						shouldContract = defaultCollapse || (typeof this.dataset.expounderC != 'undefined'),
@@ -144,3 +148,4 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 	}
 
 })(this);
+
