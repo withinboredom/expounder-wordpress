@@ -25,7 +25,7 @@ add_action ( 'init', function() {
     } );
     add_shortcode( 'ed', function( array $attributes, ?string $content = null ): string {
         $attributes = shortcode_atts( [ 'n' => '' ], $attributes, 'ed' );
-        return do_shortcode( '<span data-expounded="' . esc_attr( $attributes['n'] ) . '">' . $content . '</span>' );
+        return do_shortcode( '<div data-expounded="' . esc_attr( $attributes['n'] ) . '">' . $content . '</div>' );
     } );
 });
 
