@@ -19,13 +19,13 @@ namespace Expounder;
  * Register the shortcode
  */
 add_action ( 'init', function() {
-    add_shortcode ( 'ex#', function ( array $attributes, ?string $content = null ): string {
-        $attributes = shortcode_atts( [ 'name' => '' ], $attributes, 'ex#' );
-        return do_shortcode( '<span data-expounder="' . esc_attr( $attributes['name'] ) . '">' . $content . '</span>' );
+    add_shortcode ( 'ex', function ( array $attributes, ?string $content = null ): string {
+        $attributes = shortcode_atts( [ 'n' => '' ], $attributes, 'ex' );
+        return do_shortcode( '<span data-expounder="' . esc_attr( $attributes['n'] ) . '">' . $content . '</span>' );
     } );
-    add_shortcode( 'ex#d', function( array $attributes, ?string $content = null ): string {
-        $attributes = shortcode_atts( [ 'name' => '' ], $attributes, 'ex#d' );
-        return do_shortcode( '<span data-expounded="' . esc_attr( $attributes['name'] ) . '">' . $content . '</span>' );
+    add_shortcode( 'ed', function( array $attributes, ?string $content = null ): string {
+        $attributes = shortcode_atts( [ 'n' => '' ], $attributes, 'ed' );
+        return do_shortcode( '<span data-expounded="' . esc_attr( $attributes['n'] ) . '">' . $content . '</span>' );
     } );
 });
 
